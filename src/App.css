@@ -1,0 +1,1712 @@
+.App { /* Base font style */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8500);
+  background-color: #929292;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.1px;
+}
+
+.App .appBg {
+  background-color: #929292;
+}
+
+.App .cardBg {
+  background-color: #eaeaea;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(0, 0, 0, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #feffff;
+}
+
+.App .primaryBg {
+  background-color: #feffff;
+}
+
+.App .highlightTextColor {
+  color: #0093d5;
+}
+
+.App .highlightBg {
+  background-color: #0093d5;
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #feffff;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #feffff;
+}
+.mui-btn--accent {
+    background-color: #0093d5;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #069fda;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* App-wide text styles specified in React Studio */
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 14.2px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 14.2px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.4px;
+  font-weight: 400;
+}
+.App .headlineFont * {
+  font-size: 19.4px;
+}
+.App .navBar {
+  background-color: #feffff;
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: black;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  margin-top: 14px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.App .layoutFlow {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  float: left;
+}
+.App .layoutFlow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .compContent {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .hasNestedComps .foreground {
+  position: absolute;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .PsychBowlScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .PsychBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .PsychBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .PsychBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .PsychBowlScreen > .layoutFlow > .elBowl {
+    position: relative;
+    margin-top: 113px;
+    width: 95px;
+    margin-left: calc(50.0% - 48px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elBowl > * { 
+  width: 95px;
+  height: 73px;
+  }
+  
+@media (min-width: 568px) {
+  .PsychBowlScreen > .layoutFlow > .elBowl {
+    position: relative;
+    margin-top: 113px;
+    width: 95px;
+    margin-left: calc(50.0% - 48px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elBowl > * { 
+  width: 95px;
+  height: 73px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .PsychBowlScreen > .layoutFlow > .elBowl {
+    position: relative;
+    margin-top: 112px;
+    width: 94px;
+    margin-left: calc(50.0% - 47px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elBowl > * { 
+  width: 94px;
+  height: 72px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .PsychBowlScreen > .layoutFlow > .elBowl {
+    position: relative;
+    margin-top: 112px;
+    width: 94px;
+    margin-left: calc(50.0% - 47px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elBowl > * { 
+  width: 94px;
+  height: 72px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .PsychBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .PsychBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .PsychBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .PsychBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .PsychBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .BioBowlScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .BioBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .BioBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .BioBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .BioBowlScreen > .layoutFlow > .elBiobowl {
+    position: relative;
+    margin-top: 113px;
+    width: 84px;
+    margin-left: calc(50.0% - 42px);
+  }
+  .BioBowlScreen > .layoutFlow > .elBiobowl > * { 
+  width: 84px;
+  height: 69px;
+  }
+  
+@media (min-width: 568px) {
+  .BioBowlScreen > .layoutFlow > .elBiobowl {
+    position: relative;
+    margin-top: 113px;
+    width: 84px;
+    margin-left: calc(50.0% - 42px);
+  }
+  .BioBowlScreen > .layoutFlow > .elBiobowl > * { 
+  width: 84px;
+  height: 69px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .BioBowlScreen > .layoutFlow > .elBiobowl {
+    position: relative;
+    margin-top: 112px;
+    width: 84px;
+    margin-left: calc(50.0% - 42px);
+  }
+  .BioBowlScreen > .layoutFlow > .elBiobowl > * { 
+  width: 84px;
+  height: 68px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .BioBowlScreen > .layoutFlow > .elBiobowl {
+    position: relative;
+    margin-top: 112px;
+    width: 84px;
+    margin-left: calc(50.0% - 42px);
+  }
+  .BioBowlScreen > .layoutFlow > .elBiobowl > * { 
+  width: 84px;
+  height: 68px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .BioBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .BioBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .BioBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .BioBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .BioBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .BioBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .BioBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .BioBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+
+
+
+/* Narrowest size for this element's responsive layout */
+  .BioBowlScreen > .layoutFlow > .elColumns {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 46px;
+    margin-right: 45px;
+    width: calc(100.0% - 91px);
+  }
+  .BioBowlScreen > .layoutFlow > .elColumns > * { 
+    width: 100%;
+  height: 226px;
+  }
+  
+@media (min-width: 568px) {
+  .BioBowlScreen > .layoutFlow > .elColumns {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 46px;
+    margin-right: 45px;
+    width: calc(100.0% - 91px);
+  }
+  .BioBowlScreen > .layoutFlow > .elColumns > * { 
+    width: 100%;
+  height: 226px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .BioBowlScreen > .layoutFlow > .elColumns {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 45px;
+    margin-right: 45px;
+    width: calc(100.0% - 90px);
+  }
+  .BioBowlScreen > .layoutFlow > .elColumns > * { 
+    width: 100%;
+  height: 226px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .BioBowlScreen > .layoutFlow > .elColumns {
+    position: relative;
+    margin-top: 26px;
+    margin-left: 45px;
+    margin-right: 45px;
+    width: calc(100.0% - 90px);
+  }
+  .BioBowlScreen > .layoutFlow > .elColumns > * { 
+    width: 100%;
+  height: 226px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .LexBowlScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .LexBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .LexBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .LexBowlScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .LexBowlScreen > .layoutFlow > .elPsychbowl {
+    position: relative;
+    margin-top: 113px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elPsychbowl > * { 
+    width: 100%;
+  height: 82px;
+  }
+  
+@media (min-width: 568px) {
+  .LexBowlScreen > .layoutFlow > .elPsychbowl {
+    position: relative;
+    margin-top: 113px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elPsychbowl > * { 
+    width: 100%;
+  height: 82px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .LexBowlScreen > .layoutFlow > .elPsychbowl {
+    position: relative;
+    margin-top: 112px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elPsychbowl > * { 
+    width: 100%;
+  height: 82px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .LexBowlScreen > .layoutFlow > .elPsychbowl {
+    position: relative;
+    margin-top: 112px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elPsychbowl > * { 
+    width: 100%;
+  height: 82px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .LexBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+@media (min-width: 568px) {
+  .LexBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .LexBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .LexBowlScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: 22px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .LexBowlScreen > .layoutFlow > .elField > * { 
+    width: 100%;
+  height: 34px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .background > .elBackground {
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elDishes5 {
+  0% { opacity: 0.0; }
+  23% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow > .elDishes5 {
+  animation: 1.30s fadeIn_StartScreen_elDishes5;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elDishes5 {
+    position: relative;
+    margin-top: 68px;
+    margin-left: 114px;
+    margin-right: 113px;
+    width: calc(100.0% - 226px);
+  }
+  .StartScreen > .layoutFlow > .elDishes5 > * { 
+    width: 100%;
+  height: 94px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elDishes5 {
+    position: relative;
+    margin-top: 68px;
+    margin-left: 114px;
+    margin-right: 113px;
+    width: calc(100.0% - 226px);
+  }
+  .StartScreen > .layoutFlow > .elDishes5 > * { 
+    width: 100%;
+  height: 94px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elDishes5 {
+    position: relative;
+    margin-top: 68px;
+    margin-left: 113px;
+    margin-right: 112px;
+    width: calc(100.0% - 225px);
+  }
+  .StartScreen > .layoutFlow > .elDishes5 > * { 
+    width: 100%;
+  height: 93px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elDishes5 {
+    position: relative;
+    margin-top: 68px;
+    margin-left: 113px;
+    margin-right: 112px;
+    width: calc(100.0% - 225px);
+  }
+  .StartScreen > .layoutFlow > .elDishes5 > * { 
+    width: 100%;
+  height: 93px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elText {
+  0% { opacity: 0.0; }
+  23% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow > .elText {
+  animation: 1.30s fadeIn_StartScreen_elText;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elText {
+    position: relative;
+    margin-top: 27px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elBiobowl {
+  0% { opacity: 0.0; }
+  33% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elBiobowl {
+  animation: 1.50s fadeIn_StartScreen_elBiobowl;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elBiobowl {
+    position: absolute;
+    margin-top: 90px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elBiobowl > * { 
+  margin-left: auto;
+  width: 136px;
+  margin-right: 64.2%;
+  height: 136px;
+  }
+  
+  .flowRow_StartScreen_elBiobowl_654875 { 
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elBiobowl {
+    position: absolute;
+    margin-top: 90px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elBiobowl > * { 
+  margin-left: auto;
+  width: 136px;
+  margin-right: 58.0%;
+  height: 136px;
+  }
+  
+  .flowRow_StartScreen_elBiobowl_654875 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elBiobowl {
+    position: absolute;
+    margin-top: 90px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elBiobowl > * { 
+  margin-left: auto;
+  width: 136px;
+  margin-right: 55.9%;
+  height: 136px;
+  }
+  
+  .flowRow_StartScreen_elBiobowl_654875 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elBiobowl {
+    position: absolute;
+    margin-top: 90px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elBiobowl > * { 
+  margin-left: auto;
+  width: 136px;
+  margin-right: 57.1%;
+  height: 136px;
+  }
+  
+  .flowRow_StartScreen_elBiobowl_654875 { 
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elPsychbowl {
+  0% { opacity: 0.0; }
+  37% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elPsychbowl {
+  animation: 1.60s fadeIn_StartScreen_elPsychbowl;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elPsychbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% - 68px);
+  }
+  .StartScreen > .layoutFlow .elPsychbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elPsychbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% - 68px);
+  }
+  .StartScreen > .layoutFlow .elPsychbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elPsychbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% - 68px);
+  }
+  .StartScreen > .layoutFlow .elPsychbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elPsychbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% - 68px);
+  }
+  .StartScreen > .layoutFlow .elPsychbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elLexbowl {
+  0% { opacity: 0.0; }
+  41% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elLexbowl {
+  animation: 1.70s fadeIn_StartScreen_elLexbowl;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elLexbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% + 91px);
+  }
+  .StartScreen > .layoutFlow .elLexbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elLexbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% + 91px);
+  }
+  .StartScreen > .layoutFlow .elLexbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elLexbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% + 90px);
+  }
+  .StartScreen > .layoutFlow .elLexbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elLexbowl {
+    position: absolute;
+    top: 90px;
+    width: 136px;
+    margin-left: calc(50.0% + 90px);
+  }
+  .StartScreen > .layoutFlow .elLexbowl > * { 
+  width: 136px;
+  height: 136px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elTextBlock3 {
+  0% { opacity: 0.0; }
+  41% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elTextBlock3 {
+  animation: 1.70s fadeIn_StartScreen_elTextBlock3;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elTextBlock3 {
+    position: absolute;
+    top: 147px;
+    width: 76px;
+    margin-left: calc(50.0% + 131px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock3 > * { 
+  width: 76px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elTextBlock3 {
+    position: absolute;
+    top: 147px;
+    width: 76px;
+    margin-left: calc(50.0% + 131px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock3 > * { 
+  width: 76px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elTextBlock3 {
+    position: absolute;
+    top: 146px;
+    width: 76px;
+    margin-left: calc(50.0% + 130px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock3 > * { 
+  width: 76px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elTextBlock3 {
+    position: absolute;
+    top: 146px;
+    width: 76px;
+    margin-left: calc(50.0% + 130px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock3 > * { 
+  width: 76px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elTextBlock2 {
+  0% { opacity: 0.0; }
+  37% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elTextBlock2 {
+  animation: 1.60s fadeIn_StartScreen_elTextBlock2;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elTextBlock2 {
+    position: absolute;
+    top: 147px;
+    width: 91px;
+    margin-left: calc(52.1% - 45px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock2 > * { 
+  width: 91px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elTextBlock2 {
+    position: absolute;
+    top: 147px;
+    width: 91px;
+    margin-left: calc(51.2% - 45px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock2 > * { 
+  width: 91px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elTextBlock2 {
+    position: absolute;
+    top: 146px;
+    width: 90px;
+    margin-left: calc(50.9% - 45px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock2 > * { 
+  width: 90px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elTextBlock2 {
+    position: absolute;
+    top: 146px;
+    width: 90px;
+    margin-left: calc(50.7% - 45px);
+  }
+  .StartScreen > .layoutFlow .elTextBlock2 > * { 
+  width: 90px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elTextBlock {
+  0% { opacity: 0.0; }
+  33% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow .elTextBlock {
+  animation: 1.50s fadeIn_StartScreen_elTextBlock;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elTextBlock {
+    overflow: hidden;
+    position: absolute;
+    top: 147px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elTextBlock > * { 
+  margin-left: auto;
+  width: 68px;
+  margin-right: 70.5%;
+  height: 26px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elTextBlock {
+    overflow: hidden;
+    position: absolute;
+    top: 147px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elTextBlock > * { 
+  margin-left: auto;
+  width: 68px;
+  margin-right: 61.6%;
+  height: 26px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elTextBlock {
+    overflow: hidden;
+    position: absolute;
+    top: 146px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elTextBlock > * { 
+  margin-left: auto;
+  width: 68px;
+  margin-right: 58.5%;
+  height: 26px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elTextBlock {
+    overflow: hidden;
+    position: absolute;
+    top: 146px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow .elTextBlock > * { 
+  margin-left: auto;
+  width: 68px;
+  margin-right: 58.8%;
+  height: 26px;
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elCard {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .layoutFlow > .elCard {
+  animation: 2.10s fadeIn_StartScreen_elCard;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 453px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow > .elCard > * { 
+  width: 319px;
+  height: 204px;
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 453px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow > .elCard > * { 
+  width: 319px;
+  height: 204px;
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 450px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow > .elCard > * { 
+  width: 317px;
+  height: 203px;
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow > .elCard {
+    position: relative;
+    margin-top: 450px;
+    width: 100%;
+  }
+  .StartScreen > .layoutFlow > .elCard > * { 
+  width: 317px;
+  height: 203px;
+  }
+  
+}
+
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .layoutFlow .elText5 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow .elText5 > * { 
+    width: 100%;
+  height: 26px;
+  }
+  
+  .flowRow_StartScreen_elText5_655308 { 
+  }
+  
+@media (min-width: 568px) {
+  .StartScreen > .layoutFlow .elText5 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 22px;
+    margin-right: 23px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow .elText5 > * { 
+    width: 100%;
+  height: 26px;
+  }
+  
+  .flowRow_StartScreen_elText5_655308 { 
+  }
+  
+}
+@media (min-width: 768px) {
+  .StartScreen > .layoutFlow .elText5 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow .elText5 > * { 
+    width: 100%;
+  height: 26px;
+  }
+  
+  .flowRow_StartScreen_elText5_655308 { 
+  }
+  
+}
+@media (min-width: 1024px) {
+  .StartScreen > .layoutFlow .elText5 {
+    overflow: hidden;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 22px;
+    margin-right: 22px;
+    width: calc(100.0% - 45px);
+  }
+  .StartScreen > .layoutFlow .elText5 > * { 
+    width: 100%;
+  height: 26px;
+  }
+  
+  .flowRow_StartScreen_elText5_655308 { 
+  }
+  
+}
+
+@keyframes fadeIn_StartScreen_elHome {
+  from { opacity: 0.0; }
+  to   { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elHome {
+  animation: 1.00s fadeIn_StartScreen_elHome;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elHome {
+    overflow: hidden;
+    position: absolute;
+    left: 68px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elHome {
+    overflow: hidden;
+    left: 68px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elHome {
+    overflow: hidden;
+    left: 68px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elHome {
+    overflow: hidden;
+    left: 68px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elTutorial {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elTutorial {
+  animation: 2.10s fadeIn_StartScreen_elTutorial;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elTutorial {
+    overflow: hidden;
+    position: fixed;
+    right: 79px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elTutorial {
+    overflow: hidden;
+    right: 79px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elTutorial {
+    overflow: hidden;
+    right: 79px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elTutorial {
+    overflow: hidden;
+    right: 79px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elAboutUs {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elAboutUs {
+  animation: 2.10s fadeIn_StartScreen_elAboutUs;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elAboutUs {
+    overflow: hidden;
+    position: fixed;
+    right: 158px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elAboutUs {
+    overflow: hidden;
+    right: 158px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elAboutUs {
+    overflow: hidden;
+    right: 158px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elAboutUs {
+    overflow: hidden;
+    right: 158px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elBoards {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elBoards {
+  animation: 2.10s fadeIn_StartScreen_elBoards;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elBoards {
+    overflow: hidden;
+    position: fixed;
+    right: 226px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elBoards {
+    overflow: hidden;
+    right: 226px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elBoards {
+    overflow: hidden;
+    right: 225px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elBoards {
+    overflow: hidden;
+    right: 225px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elFAQ {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elFAQ {
+  animation: 2.10s fadeIn_StartScreen_elFAQ;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elFAQ {
+    overflow: hidden;
+    position: fixed;
+    right: 272px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elFAQ {
+    overflow: hidden;
+    right: 272px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elFAQ {
+    overflow: hidden;
+    right: 270px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elFAQ {
+    overflow: hidden;
+    right: 270px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
+@keyframes fadeIn_StartScreen_elSignIn {
+  0% { opacity: 0.0; }
+  52% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+.StartScreen > .screenFgContainer > .foreground > .elSignIn {
+  animation: 2.10s fadeIn_StartScreen_elSignIn;
+}
+
+/* Narrowest size for this element's responsive layout */
+  .StartScreen > .screenFgContainer > .foreground > .elSignIn {
+    overflow: hidden;
+    position: fixed;
+    right: 340px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+@media (min-width: 568px) {
+  .StartScreen > .screenFgContainer > .foreground > .elSignIn {
+    overflow: hidden;
+    right: 340px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 768px) {
+  .StartScreen > .screenFgContainer > .foreground > .elSignIn {
+    overflow: hidden;
+    right: 338px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .StartScreen > .screenFgContainer > .foreground > .elSignIn {
+    overflow: hidden;
+    right: 338px;
+    top: 12px;
+    width: 68px;
+    height: 26px;
+  }
+}
+
